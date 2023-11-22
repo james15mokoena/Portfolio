@@ -1,0 +1,40 @@
+﻿@model Portfolio.Models.Administrator;
+
+<style type="text/css">
+
+    body {
+        background-color: lightgray;
+    }
+
+</style>
+
+<div class="container text-center">
+
+    <h1 class="display-6">Create Account</h1>
+
+    <div class="container">
+
+        <form class="form" method="get" asp-action="CreateNewAccount">
+
+            <label for="Email" class="form-label">Email:</label>
+            <input asp-for="Email" class="form-control" type="email" required />
+            <label for="Password" class="form-label">Password:</label>
+            <input asp-for="Password" class="form-control" type="password" required />       
+            <label for="Phone" class="form-label">Phone:</label>
+            <input asp-for="Phone" class="form-control" type="tel" required />
+            <button type="submit" class="btn btn-primary mt-3">Create Account</button>
+            <br />
+            <br />
+            @{
+                if (TempData.ContainsKey("ErrorMessage"))
+                {
+                    <div class="alert alert-danger">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+            }
+
+        </form>
+
+    </div>    
+</div>

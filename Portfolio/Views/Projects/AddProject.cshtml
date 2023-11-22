@@ -1,0 +1,38 @@
+﻿@model Portfolio.Models.Project;
+
+@{
+    ViewData["Title"] = "Edit Project";
+}
+
+<style type="text/css">
+
+    body {
+        background-color: lightgray;
+    }
+
+</style>
+
+<div class="container text-center">
+
+    <h1 class="display-6 text-center mb-5">Add New Project</h1>
+
+    <form asp-action="AddProject" method="post" class="form text-center">
+ 
+        <label for="Name" class="form-label">Name:</label>
+        <input asp-for="Name" class="form-control" type="text" id="Name" required/> <br />
+        <label for="Description" class="form-label">Description:</label>
+        <textarea asp-for="Description" class="form-control" id="Description" required></textarea> <br />
+        <label for="Type" class="form-label">Type:</label>
+        <input asp-for="Type" class="form-control" id="Type" required/> <br />
+        <label for="IsInDevelopment" class="form-label">Is In Development?</label>
+        <input asp-for="IsInDevelopment" class="form-control" type="text" id="IsInDevelopment" required/> <br />
+        <label for="ImageUrl" class="form-label">Image Url:</label>
+        <input asp-for="ImageUrl" class="form-control" type="text" id="ImageUrl" required/> <br />
+        <label for="DateStarted" class="form-label">Date Started:</label>
+        <input asp-for="DateStarted" class="form-control" type="date" id="DateStarted" required/> <br />
+        <label for="ReleaseDate" class="form-label">Date Released:</label>
+        <input asp-for="ReleaseDate" class="form-control" type="date" id="ReleaseDate" required/> <br />
+        <button type="submit" class="btn btn-success">Add Project</button>       
+    </form>
+
+</div>

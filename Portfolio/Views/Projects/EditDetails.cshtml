@@ -1,0 +1,41 @@
+﻿@model Portfolio.Models.Project;
+
+@{
+    ViewData["Title"] = "Edit Project";
+}
+
+<style type="text/css">
+
+    body {
+        background-color: lightgray;
+    }
+
+</style>
+
+<div class="container">
+
+    <h1 class="display-6 text-center mb-5">Edit Project Details</h1>
+
+    <form asp-action="Edit" method="post" class="form col-6">
+
+        <label for="Id" class="form-label">Id:</label>
+        <input asp-for="Id" class="form-control" type="text" id="Id" readonly/> <br />
+        <label for="Name" class="form-label">Name:</label>
+        <input asp-for="Name" class="form-control" type="text" id="Name"/> <br />
+        <label for="Description" class="form-label">Description:</label>
+        <textarea asp-for="Description" class="form-control" id="Description"></textarea> <br />
+        <label for="Type" class="form-label">Type:</label>
+        <input asp-for="Type" class="form-control" id="Type"/> <br />
+        <label for="IsInDevelopment" class="form-label">Is In Development?</label>
+        <input asp-for="IsInDevelopment" class="form-control" type="text" id="IsInDevelopment" /> <br />
+        <label for="ImageUrl" class="form-label">Image Url:</label>
+        <input asp-for="ImageUrl" class="form-control" type="text" id="ImageUrl"/> <br />
+        <label for="DateStarted" class="form-label">Date Started:</label>
+        <input asp-for="DateStarted" class="form-control" type="date" id="DateStarted"/> <br />
+        <label for="ReleaseDate" class="form-label">Date Released:</label>
+        <input asp-for="ReleaseDate" class="form-control" type="date" id="ReleaseDate"/> <br />
+        <button type="submit" class="btn btn-primary">Edit</button>
+        <a asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger" role="button">Delete</a>
+    </form>
+
+</div>

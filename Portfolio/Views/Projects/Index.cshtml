@@ -1,0 +1,104 @@
+﻿@model IList<Portfolio.Models.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<style type="text/css">
+
+    body {
+        background-color: lightgray;
+    }
+
+    .proj:hover {
+        box-shadow: 30px 0 10px rgba(0,0,0,0.5);
+    }
+
+</style>
+
+<div class="container">
+
+    <div class="container text-center">
+        <h1 class="display-4">Projects</h1>
+    </div>
+
+    <div class="container mb-4">
+
+        <h1 class="display-6"> Web Applications</h1>
+        
+        <div class="container text-center mt-3">
+
+            <div class="row row-cols-5 row-cols-sm-2 row-cols-md-5">
+
+                @{
+                    foreach (Project project in Model)
+                    {
+                        if (project != null && project.Type == "web")
+                        {
+                            <div class="proj col m-3">
+                                <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id"><img src="@project.ImageUrl" alt="@project.Name" width="233" height="260" /></a>
+                            </div>
+                        }
+                    }
+                }
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+     <div class="container mb-4">
+
+        <h1 class="display-6"> Desktop Applications</h1>
+
+        <div class="container text-center mt-3">
+
+            <div class="row row-cols-5 row-cols-sm-2 row-cols-md-5">
+
+                @{
+                    foreach (Project project in Model)
+                    {
+                        if (project != null && project.Type == "desktop")
+                        {
+                            <div class="proj col m-3">
+                                <a asp-controller="Home" asp-action="Details" asp-route-id="@project.Id"><img src="@project.ImageUrl" alt="@project.Name" width="233" height="260" /></a>
+                            </div>
+                        }
+                    }
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container mb-4">
+
+        <h1 class="display-6"> Mobile Applications</h1>
+
+        <div class="container text-center mt-3">
+
+            <div class="row row-cols-5 row-cols-sm-2 row-cols-md-5">
+
+                @{
+                    foreach (Project project in Model)
+                    {
+                        if (project != null && project.Type == "mobile")
+                        {
+                            <div class="proj col m-3">
+                                <a asp-controller="Home" asp-action="Details" asp-route-id="@project.Id"><img src="@project.ImageUrl" alt="@project.Name" width="233" height="260" /></a>
+                            </div>
+                        }
+                    }
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+﻿@model IList<Portfolio.Models.Project>
+@{
+    ViewData["Title"] = "Categorized Projects";
+}
+
+<style type="text/css">
+
+    body {
+        background-color: lightgray;
+    }
+
+    .proj:hover{
+        box-shadow:30px 0 10px rgba(0,0,0,0.5);
+    }
+</style>
+
+<div class="container text-center mt-5">
+
+    <div class="row row-cols-5 row-cols-sm-2 row-cols-md-5">
+        @{
+            foreach (Project project in Model)
+            {
+                if (project != null)
+                {
+                    <div class="proj col m-3">
+                        <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id"> <img src="~/@project.ImageUrl" alt="@project.Name" width="233" height="260" /></a>
+                    </div>
+                }
+            }
+        }
+    </div>
+
+</div>

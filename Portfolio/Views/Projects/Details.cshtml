@@ -1,0 +1,43 @@
+﻿@model Portfolio.Models.Project;
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style type="text/css">
+
+    body {
+        background-color: lightgray;
+    }
+
+</style>
+
+<div class="container">
+
+    <div class="container text-center mb-4">
+        <h1 class="display-6">Project Details</h1>
+    </div>
+
+    <div class="container">        
+        <label class="form-label mb-2">Name:</label>        
+        <input class="form-control" asp-for="Name" type="text" readonly/> <br/>
+        <label class="form-label mb-2">Purpose:</label> 
+        <textarea class="form-control" asp-for="Description" readonly></textarea> <br/>
+        <label class="form-label mb-2">Type:</label> 
+        <input class="form-control" asp-for="Type" type="text" readonly/> <br />
+        <label class="form-label mb-2">Date Released:</label>          
+        <input class="form-control" asp-for="ReleaseDate" type="text" readonly/> <br />
+        @{
+            if(ViewData["LoginStatus"] != null)
+            {
+                string? status = (string?) ViewData["LoginStatus"];
+
+                if(status != null && status == "yes")
+                {
+                    <a asp-controller="Projects" asp-action="EditDetails" asp-route-id="@Model.Id">Edit Details</a>
+                }                
+            }            
+        }        
+        <a href="https://github.com" target="_blank">See Project on GitHub</a>
+    </div>
+
+</div>
