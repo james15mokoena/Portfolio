@@ -179,8 +179,7 @@ namespace Portfolio.Controllers
 
         /*
          Provides the functionality for delete a project.
-        */
-        [HttpPost]
+        */       
         public async Task<IActionResult> Delete(int? id)
         {
             if (HttpContext.Session.Get("email") != null)
