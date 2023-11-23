@@ -83,7 +83,7 @@ namespace Portfolio.Controllers
             if (exAdmin != null)
             {
                 TempData["ErrorMessage"] = "Administrator already exists.";
-                return RedirectToAction("CreateAccount", "Home");
+                return RedirectToAction("CreateAccount", "Authentication");
             }
             else
             {
@@ -99,12 +99,12 @@ namespace Portfolio.Controllers
                     else
                     {
                         TempData["ErrorMessage"] = "Unacceptable email";
-                        return RedirectToAction("CreateAccount", "Home");
+                        return RedirectToAction("CreateAccount", "Authentication");
                     }
                 }
 
                 TempData["ErrorMessage"] = "Something is wrong, please check your email or password";
-                return RedirectToAction("CreateAccount", "Home");
+                return RedirectToAction("CreateAccount", "Authentication");
             }
         }
     }

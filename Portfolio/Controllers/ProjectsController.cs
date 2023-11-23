@@ -103,7 +103,7 @@ namespace Portfolio.Controllers
                     await dbContext.Projects.AddAsync(project);
                     await dbContext.SaveChangesAsync();
                     ViewData["LoginStatus"] = "yes";
-                    return RedirectToAction("Index", "Authentication");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -167,7 +167,7 @@ namespace Portfolio.Controllers
                         await dbContext.SaveChangesAsync();
                         ViewData["LoginStatus"] = "yes";
 
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Index","Home");
                     }
                 }
             }
@@ -193,7 +193,7 @@ namespace Portfolio.Controllers
                     await dbContext.SaveChangesAsync();
                     ViewData["LoginStatus"] = "yes";
 
-                    return RedirectToAction("Index", "Authentication");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
