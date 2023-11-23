@@ -34,6 +34,8 @@
         <input asp-for="DateStarted" class="form-control" type="date" id="DateStarted"/> <br />
         <label for="ReleaseDate" class="form-label">Date Released:</label>
         <input asp-for="ReleaseDate" class="form-control" type="date" id="ReleaseDate"/> <br />
+        <label for="GitHubRepo" class="form-label">GitHub Repo Link:</label>
+        <input asp-for="GitHubRepo" class="form-control" type="text" id="GitHubRepo" /> <br />
         <button type="submit" class="btn btn-primary">Edit</button>
         <a asp-controller="Projects" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger" role="button">Delete</a>
     </form>

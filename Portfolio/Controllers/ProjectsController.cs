@@ -163,6 +163,7 @@ namespace Portfolio.Controllers
                         proj.IsInDevelopment = project.IsInDevelopment;
                         proj.DateStarted = project.DateStarted;
                         proj.ReleaseDate = project.ReleaseDate;
+                        proj.GitHubRepo = project.GitHubRepo;
                         dbContext.Projects.Update(proj);
                         await dbContext.SaveChangesAsync();
                         ViewData["LoginStatus"] = "yes";
