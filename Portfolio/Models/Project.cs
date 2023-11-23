@@ -28,6 +28,9 @@ namespace Portfolio.Models
 
         // Indicates the date at which the project was released.
         [DataType(DataType.Date)]
-        public DateTime? ReleaseDate { get; set; }    
+        public DateTime? ReleaseDate { get; set; }
+
+        // Stores a link to a github repo of this project.
+        public string GitHubRepo { get; set; }
     }
 }
