@@ -58,7 +58,7 @@
                         if(project != null)
                         {
                             <div class="proj col m-3">
-                                <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id"><img src="@project.ImageUrl" alt="@project.Name" width="233" height="260"/></a>
+                                <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id"><img src="~/@project.ImageUrl" alt="@project.Name" width="233" height="260"/></a>
                             </div>
                         }
                     }
