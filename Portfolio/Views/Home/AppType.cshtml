@@ -16,13 +16,13 @@
 
 <div class="container text-center mt-5">
 
-    <div class="row row-cols-5 row-cols-sm-2 row-cols-md-5">
+    <div class="row row-cols-4">
         @{
             foreach (Project project in Model)
             {
                 if (project != null)
                 {
-                    <div class="proj col m-3">
+                    <div class="proj col-12 col-md-3 mb-3">
                         <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Id"> <img src="~/@project.ImageUrl" alt="@project.Name" width="233" height="260" /></a>
                     </div>
                 }
